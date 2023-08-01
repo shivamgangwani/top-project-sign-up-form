@@ -14,7 +14,93 @@
                 <h1>Odin</h1>
             </div>
         </div>
-        <div id="content">Content</div>
+        <div id="content">
+            <div id="content-container" class="container column">
+                <div id="content-cta">Sign up now to get started!</div>
+                <div id="content-form">
+                    <form id="sign-up-form">
+                        <h3>Let's Get Started</h3>
+                        <div class="container row">
+                            <div class="col">
+                                <div class="container column">
+                                    <label for="firstname">First Name</label>
+                                    <input type="text" name="firstname" id="firstname" required>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="container column">
+                                    <label for="lastname">Last Name</label>
+                                    <input type="text" name="lastname" id="lastname" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container row">
+                            <div class="col">
+                                <div class="container column">
+                                    <label for="email">E-mail</label>
+                                    <input type="email" name="email" id="email">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="container column">
+                                    <label for="phnum">Phone Number</label>
+                                    <input type="tel" name="phnum" id="phnum">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container row">
+                            <div class="col">
+                                <div class="container column">
+                                    <label for="initpwd">Password</label>
+                                    <input type="password" name="initpwd" id="initpwd">
+                                    <span id="pwd-error-field">* Passwords do not match!</span>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="container column">
+                                    <label for="confpwd">Confirm Password</label>
+                                    <input type="password" name="confpwd" id="confpwd">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div id="content-form-footer">
+                    <input type="submit" form="sign-up-form" value="Create Account">
+                    <br>
+                    <p>Already have an account? <a href="#">Login</a></p>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
+
+<script defer>
+window.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector("form#sign-up-form");
+
+    const initPwd = form.querySelector("input[name='initpwd']");
+    const confPwd = form.querySelector("input[name='confpwd']");
+    const errorMsg = form.querySelector("#pwd-error-field");
+
+    function doPasswordsMatch() {
+        return initPwd.value === confPwd.value;
+    }
+
+    function updatePasswordErrorState() {
+        if(doPasswordsMatch()) {
+            initPwd.classList.remove('error');
+            confPwd.classList.remove('error');
+            errorMsg.style.visibility = "hidden";
+        }
+        else {
+            initPwd.classList.add('error');
+            confPwd.classList.add('error');
+            errorMsg.style.visibility = "visible";            
+        }
+    }
+
+    [initPwd, confPwd].forEach((el) => el.addEventListener("focusout", updatePasswordErrorState));
+});
+</script>
 </html>

@@ -24,6 +24,13 @@ body {
 .container.row {
     flex-direction: row;
 }
+.container.column {
+    flex-direction: column;
+}
+
+.col {
+    flex: 1 1 0%;
+}
 
 #brand-sidebar {
     background: url('bg-img.jpg');
@@ -34,7 +41,7 @@ body {
 
 #brand {
     height: 16vh;
-    margin-top: 25vh;
+    margin-top: 15vh;
     padding: 0px 20px;
     justify-content: center;
     align-items: center;
@@ -48,4 +55,88 @@ body {
 
 #content {
     flex: 2 1 0%;
+    background-color: rgb(249, 250, 251);
+}
+
+#content-container div {
+    padding: 5px 20px;
+}
+
+form h3{
+    margin-left: 60px;
+}
+
+#content-cta {
+    margin-top: 6vh;
+    margin-bottom: 17.5vh;
+    font-size: 3rem;
+    font-weight: 400;
+}
+
+#content-form {
+    background-color: white;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+#content-form h3 {
+    font-weight: 400;
+}
+
+label {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+
+input {
+    height: 30px;
+    border: 1px solid #E5E7EB;
+    border-radius: 6px;
+    padding-left: 10px;
+    font-size: 1.2rem;
+    width: 80%;
+}
+
+input:focus {
+    outline: 1px solid teal;
+    box-shadow: 1px 1px 4px teal;
+}
+
+input:invalid, .error {
+    outline: 1px solid red;
+}
+
+#pwd-error-field {
+    margin-top: 4px;
+    font-size: 0.8rem;
+    color: red;
+    font-weight: 400;
+    visibility: hidden;
+}
+
+#content-form-footer {
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+input[type='submit'] {
+    color: white;
+    background-color: #596D48;
+    padding: 12px 24px;
+    height: 50px;
+    width: 200px;
+    box-shadow: 1px 1px 2px 0 .125rem .25rem rgba(0,0,0, .075);
+    border-radius: 8px;
+}
+
+#content-form-footer p {
+    font-size: 1rem;
+}
+
+#content-form-footer a {
+    color: #596D48;
+    font-weight: 400;
+    text-decoration: none;
 }
