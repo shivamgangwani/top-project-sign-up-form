@@ -37,6 +37,7 @@ body {
     background-size: cover;
     color: white;
     flex: 1 1 0%;
+    justify-content: space-between;
 }
 
 #brand {
@@ -139,4 +140,12 @@ input[type='submit'] {
     color: #596D48;
     font-weight: 400;
     text-decoration: none;
+}
+
+div#photo-credits {
+    text-align: center;
+}
+
+div#photo-credits a{
+    color: white;
 }
